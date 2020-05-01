@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
   container: {
     width: '95%',
     elevation: 8,
-
   },
   infoText: {
     textTransform: 'uppercase',
