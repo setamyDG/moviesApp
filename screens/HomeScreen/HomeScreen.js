@@ -46,7 +46,7 @@ export default class HomeScreen extends Component {
 
   searchChangeHandler = searchTerm => {
     this.setState({searchTerm: searchTerm});
-    this.performSearch(searchTerm);
+    this.searchData(searchTerm);
   };
 
   render() {
