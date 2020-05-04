@@ -18,9 +18,13 @@ export default class HomeScreen extends Component {
     super();
     this.state = {};
     this.apiKey = '1bd87bc8f44f05134b3cff209a473d2e';
-    this.performSearch('john');
   }
-  performSearch(searchTerm) {
+
+  componentDidMount() {
+    this.searchData('john');
+  }
+
+  searchData(searchTerm) {
     fetch(
       `https://api.themoviedb.org/3/search/movie?&api_key=${
         this.apiKey
