@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Alert, Text} from 'react-native';
+import {View, Alert} from 'react-native';
 import CardCustom from '../CardCustom/CardCustom';
 
 class MovieRow extends Component {
