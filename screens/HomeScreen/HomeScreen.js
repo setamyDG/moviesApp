@@ -4,20 +4,20 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Dimensions,
   StatusBar,
   KeyboardAvoidingView,
 } from 'react-native';
 import Header from '../../components/Header/Header';
 import MovieRow from '../../components/MovieRow/MovieRow';
 import InputContainer from '../../components/InputContainer/InputContainer';
-const {width, height} = Dimensions.get('window');
+import {apiUrl, poster_path_url} from '../../constants/ApiConstants';
+import DeviceDimensions from '../../constants/Dimensions';
+import Colors from '../../constants/Colors';
 
 export default class HomeScreen extends Component {
   constructor() {
     super();
     this.state = {};
-    this.apiKey = '1bd87bc8f44f05134b3cff209a473d2e';
   }
 
   componentDidMount() {
@@ -25,18 +25,14 @@ export default class HomeScreen extends Component {
   }
 
   searchData(searchTerm) {
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?&api_key=${
-        this.apiKey
-      }&query=${searchTerm}`,
-    )
+    fetch(`${apiUrl}&query=${searchTerm}`)
       .then(data => data.json())
       .then(data => {
         const results = data.results;
         const movieRows = [];
         console.log(results);
         results.forEach(movie => {
-          movie.poster_path = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+          movie.poster_path = poster_path_url + movie.poster_path;
           const movies = <MovieRow key={movie.id} movie={movie} />;
           movieRows.push(movies);
         });
@@ -53,7 +49,7 @@ export default class HomeScreen extends Component {
     return (
       <KeyboardAvoidingView behavior="padding" style={{flex: 1}}>
         <StatusBar hidden={true} />
-        <SafeAreaView style={{width: width, height: height}}>
+        <SafeAreaView style={{width: DeviceDimensions.deviceWidth, height: DeviceDimensions.deviceHeight}}>
           <View style={styles.container}>
             <Header />
             <InputContainer
@@ -71,10 +67,10 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: height,
-    width: width,
+    height: DeviceDimensions.deviceHeight,
+    width: DeviceDimensions.deviceWidth,
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
     alignItems: 'center',
   },
 });

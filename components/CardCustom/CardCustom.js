@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button, Card} from 'react-native-elements';
 import PropTypes from 'prop-types';
+import Colors from '../../constants/Colors';
 
 const CardCustom = props => (
   <Card
@@ -17,7 +18,7 @@ const CardCustom = props => (
     </View>
     <Button
       buttonStyle={{
-        backgroundColor: 'black',
+        backgroundColor: Colors.black,
       }}
       title="VIEW MORE"
       onPress={props.onPress}

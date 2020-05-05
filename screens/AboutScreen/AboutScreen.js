@@ -1,15 +1,10 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Dimensions,
-  StyleSheet,
-} from 'react-native';
+import {View, Text, ImageBackground, StyleSheet} from 'react-native';
 import BottomSignature from '../../components/BottomSignature/BottomSignature';
 import ButtonCustom from '../../components/ButtonCustom/ButtonCustom';
+import DeviceDimensions from '../../constants/Dimensions';
+import Colors from '../../constants/Colors';
 
-const {width, height} = Dimensions.get('window');
 const AboutScreen = ({navigation}) => (
   <ImageBackground
     source={require('../../assets/images/2.jpeg')}
@@ -38,22 +33,22 @@ const styles = StyleSheet.create({
   container: {
     width: 350,
     height: 300,
-    backgroundColor: 'black',
+    backgroundColor: Colors.black,
     opacity: 0.6,
     borderWidth: 2,
-    borderColor: 'white',
+    borderColor: Colors.white,
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },
   background: {
-    height: height,
-    width: width,
+    height: DeviceDimensions.deviceHeight,
+    width: DeviceDimensions.deviceWidth,
     alignItems: 'center',
     justifyContent: 'center',
   },
   dummyText: {
-    color: 'white',
+    color: Colors.white,
     textTransform: 'uppercase',
     textAlign: 'center',
   },

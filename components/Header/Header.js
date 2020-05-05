@@ -1,14 +1,8 @@
 import React from 'react';
-import {
-  ImageBackground,
-  Text,
-  Dimensions,
-  View,
-  StyleSheet,
-} from 'react-native';
+import {ImageBackground, Text, View, StyleSheet} from 'react-native';
 import {Icon} from 'react-native-elements';
-
-const {width, height} = Dimensions.get('window');
+import DeviceDimensions from '../../constants/Dimensions';
+import Colors from '../../constants/Colors';
 
 const Header = () => (
   <ImageBackground
@@ -39,17 +33,17 @@ export default Header;
 
 const styles = StyleSheet.create({
   background: {
-    width: width,
-    height: height / 2.8,
+    width: DeviceDimensions.deviceWidth,
+    height: DeviceDimensions.deviceHeight / 2.8,
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
     fontSize: 50,
-    color: 'white',
+    color: Colors.white,
     fontWeight: 'bold',
     opacity: 1,
     borderWidth: 2,
-    borderColor: 'white',
+    borderColor: Colors.white,
   },
 });

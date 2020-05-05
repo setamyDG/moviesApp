@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
+import Colors from '../../constants/Colors';
 
 const BottomSignature = () => (
   <Text style={styles.text}>
@@ -12,7 +13,7 @@ export default BottomSignature;
 
 const styles = StyleSheet.create({
   text: {
-    color: 'white',
+    color: Colors.white,
     fontSize: 12,
     top: '10%',
     textAlign: 'center',

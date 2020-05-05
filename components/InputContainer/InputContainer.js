@@ -1,8 +1,9 @@
 import React from 'react';
-import {StyleSheet, View, Dimensions} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import SearchInput from '../SearchInput/SearchInput';
 import PropTypes from 'prop-types';
-const {width} = Dimensions.get('window');
+import DeviceDimensions from '../../constants/Dimensions';
+import Colors from '../../constants/Colors';
 
 const InputContainer = props => (
   <View style={styles.inputContainer}>
@@ -14,8 +15,8 @@ export default InputContainer;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    backgroundColor: 'white',
-    width: width / 1.3,
+    backgroundColor: Colors.white,
+    width: DeviceDimensions.deviceWidth / 1.3,
     height: '10%',
     top: '-5%',
     alignItems: 'center',
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     elevation: 20,
     marginBottom: -30,
     borderWidth: 2,
-    borderColor: 'gray',
+    borderColor: Colors.gray,
   },
 });
 
