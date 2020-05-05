@@ -34,9 +34,9 @@ export default class HomeScreen extends Component {
       .then(data => {
         const results = data.results;
         const movieRows = [];
+        console.log(results);
         results.forEach(movie => {
-          movie.poster_path =
-            'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+          movie.poster_path = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
           const movies = <MovieRow key={movie.id} movie={movie} />;
           movieRows.push(movies);
         });
